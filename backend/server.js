@@ -46,50 +46,9 @@ const initializeDBAndSeed = async () => {
       }
 
       // Seed Admin User
-      const adminEmail = 'anshuman@pinnaclecareers.com';
-      let admin = await User.findOne({ email: adminEmail });
-      if (!admin) {
-        admin = await User.create({
-          fullName: 'Anshuman',
-          email: adminEmail,
-          password: 'Co9026@anshuman',
-          phoneNumber: '9999999999',
-          country: 'India',
-          currentLocation: 'Bangalore',
-          role: 'Admin'
-        });
-        console.log('Admin user seeded: anshuman@pinnaclecareers.com / Co9026@anshuman');
-      } else {
-        admin.password = 'Co9026@anshuman';
-        await admin.save();
-        console.log('Admin user password verified/reset.');
-      }
-
+     
       // Seed HR User
-      const hrEmail = 'hr@razorpay.com';
-      let hrUser = await User.findOne({ email: hrEmail });
-      if (!hrUser) {
-        hrUser = await User.create({
-          fullName: 'Neha Sharma',
-          email: hrEmail,
-          password: 'Hr@12345',
-          phoneNumber: '8888888888',
-          country: 'India',
-          currentLocation: 'Mumbai',
-          role: 'HR',
-          companyName: 'Razorpay'
-        });
-        console.log('HR user seeded: hr@razorpay.com / Hr@12345');
-      } else {
-        hrUser.password = 'Hr@12345';
-        await hrUser.save();
-        console.log('HR user password verified/reset.');
-      }
-    } catch (seedErr) {
-      console.error('Seeding database failed:', seedErr.message);
-    }
-  }
-};
+
 
 initializeDBAndSeed();
 
