@@ -1,0 +1,9 @@
+# Node.js dependencies
+node_modules/
+
+# Environment files containing secrets
+.env
+
+# Runtime upload directory
+uploads/*
+!uploads/.gitkeep
